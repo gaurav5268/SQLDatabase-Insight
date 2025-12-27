@@ -16,7 +16,7 @@ from prompts import prompt
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
+'''GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
 if not GEMINI_API_KEY:
     raise RuntimeError("GEMINI_API_KEY not set in environment (.env)")
 
@@ -24,7 +24,11 @@ gemini_llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
     google_api_key=GEMINI_API_KEY,
     temperature=0
-)
+)'''
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") 
+if not GROQ_API_KEY:
+    raise RuntimeError("GROOQ_APIKEY not set in environment (.env)")
 
 groq_llm = ChatGroq(
     model="llama-3.1-8b-instant",
