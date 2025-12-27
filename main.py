@@ -26,10 +26,6 @@ gemini_llm = ChatGoogleGenerativeAI(
     temperature=0
 )
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY") 
-if not GROQ_API_KEY:
-    raise RuntimeError("GROOQ_APIKEY not set in environment (.env)")
-
 groq_llm = ChatGroq(
     model="llama-3.1-8b-instant",
     api_key=GROQ_API_KEY,
