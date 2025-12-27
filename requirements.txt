@@ -6,10 +6,7 @@ SpeechRecognition==3.10.0
 langchain==0.0.330
 langchain-google-genai==0.0.6
 langchain-groq==0.0.1
-
-# Recommended supporting dependencies
 plotly==5.18.0
-protobuf==4.24.3
 requests==2.31.0
 numpy==1.26.0
 tqdm==4.66.1
