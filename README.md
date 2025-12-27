@@ -1,182 +1,154 @@
-# Natural Language Database Insights Project (SQLite + CSV Dataset)
+# Natural Language Database Insights Project (Text-to-SQL + CSV Dataset)
 
-A database-driven project that creates a fully structured SQLite database from CSV files
-and allows users to explore and analyze the database using natural-language queries.
+A database insights and analytics project that allows users to explore and analyze structured database records using natural-language queries.
 
-This database is later integrated with a Streamlit + LLM based application
-to generate SQL queries, insights, tables, and visual charts automatically.
+The system is designed to work with relational databases. SQLite is used only as a lightweight deployment database for portability and easy execution.
+
+The application is later integrated with a Streamlit + LLM powered pipeline to automatically generate SQL queries, insights, tables, and visual charts from user queries.
 
 The project includes:
 
-✔ Automatic SQLite Database Creation  
-✔ Schema-Based Table Generation  
-✔ Foreign-Key Enforced Relationships  
-✔ Clean CSV Import Pipeline  
-✔ Transaction-Safe Data Loading  
-✔ Automatic Database Overwrite & Rebuild  
-✔ Backend Dataset for Natural Language SQL Insights  
+✔ Natural Language → SQL Query Generation  
+✔ Schema-Aware Database Understanding  
+✔ Relational Dataset with Foreign-Key Mapping  
+✔ Clean CSV-Based Data Import Pipeline  
+✔ Automatic Database Build & Rebuild Support  
+✔ Backend Dataset for Insight & Analytics System  
 
 ---
 
 ## Problem Statement
 
-Database analysis often requires:
+Database exploration normally requires writing SQL queries manually, understanding table relationships, validating foreign-key constraints, and handling structured dataset imports. For learners, analysts, and non-technical users this becomes complex and time-consuming.
 
-- Writing SQL queries manually  
-- Understanding relational schema  
-- Debugging foreign-key relationships  
-- Handling data imports safely  
+This project solves that by:
 
-For beginners, analysts, and students — this becomes time-consuming and difficult.
+- Preparing a clean and structured relational dataset  
+- Loading data in dependency-safe order  
+- Preserving referential integrity  
+- Enabling natural-language driven database insights  
 
-This project solves that problem by:
+The database serves as a backend for:
 
-- Automatically creating database from schema  
-- Loading CSV data in dependency-safe order  
-- Enforcing referential integrity  
-- Providing a clean & reproducible dataset  
-- Enabling natural-language query insights  
-
-The database is further used for:
-
-🟢 SQL Learning & Practice  
-🟢 Data Analytics & Exploration  
-🟢 Natural Language Query → SQL Conversion  
+🟢 SQL learning and practice  
+🟢 Data analytics and reporting  
+🟢 Natural-language query understanding  
 
 ---
 
 ## Dataset
 
-The database is created from structured CSV files inside the `data/` folder.
+The dataset is stored in CSV format and imported into the database.
 
 Tables included:
 
-| Table Name | Description |
-|----------|-----------|
-| employee | Employee personal & demographic details |
-| department | Department master data |
-| dept_emp | Employee–Department mapping |
-| title | Employee role & designation |
-| salary | Salary records |
+employee — Employee personal and demographic details  
+department — Department master data  
+dept_emp — Employee–Department mapping  
+title — Employee role and designation  
+salary — Salary records  
 
-Data is imported in correct dependency order to maintain constraints.
+The import process maintains relational consistency and foreign-key safety.
 
 ---
 
-## Database Pipeline & Processing
+## Database Processing Pipeline
 
-Step 1 — Enable Foreign Key Enforcement  
-Step 2 — Execute Schema from `schema.sql`  
-Step 3 — Load CSV files in referential order  
-Step 4 — Clean and normalize column headers  
-Step 5 — Insert records into tables  
-Step 6 — Commit and finalize SQLite database  
+Step 1 — Create tables from schema  
+Step 2 — Load data from CSV files  
+Step 3 — Normalize and clean column headers  
+Step 4 — Insert data in dependency-safe order  
+Step 5 — Validate relational constraints  
+Step 6 — Finalize database for analytics use  
 
-The script ensures:
+This ensures:
 
-✔ No partial imports  
+✔ No partial or corrupt imports  
 ✔ No broken relationships  
-✔ No duplicate database state  
+✔ Consistent and reproducible dataset  
 
 ---
 
-## Business / Learning Objective
+## Business & Learning Objectives
 
 This project is designed for:
 
-✔ SQL & Database Concepts Learning  
-✔ Data Engineering Practice  
-✔ ETL & Dataset Structuring  
-✔ Analytics Project Backend  
-✔ Natural Language Insight Systems  
+✔ Understanding relational database concepts  
+✔ Practicing SQL and analytical queries  
+✔ Hands-on data engineering workflow  
+✔ Backend dataset for insight applications  
+✔ Natural-language database exploration  
 
-It supports natural-language interactions such as:
+Example natural-language queries supported:
 
-- "Show employees working in Finance department"
-- "List salaries of Senior Engineers"
-- "Department wise employee count"
-- "Generate chart of employee distribution"
+- Show employees working in Finance department  
+- List salaries of Senior Engineers  
+- Department-wise employee distribution  
+- Generate chart of employees by title  
 
-The system converts queries to SQL and fetches results automatically.
+The system converts user queries to SQL and fetches insights automatically.
 
 ---
 
 ## Tech Stack
 
-**Languages**
-- Python
-
-**Database**
-- SQLite
-
-**Libraries**
-- Pandas
-
-**Data Source**
-- CSV Files + Schema SQL
-
-**Usage**
-- Backend for Text-to-SQL Insights System
+Languages — Python  
+Database Runtime — SQLite (deployment convenience only; design is database-agnostic)  
+Libraries — Pandas  
+Data Source — CSV + Schema SQL  
+Application Usage — Text-to-SQL Analytics Backend  
 
 ---
 
 ## Project Architecture
 
-data/      
-├── schema.sql
-├── employee.csv
-├── department.csv
-├── dept_emp.csv
-├── title.csv
-└── salary.csv
+data/  
+ ├── schema.sql  
+ ├── employee.csv  
+ ├── department.csv  
+ ├── dept_emp.csv  
+ ├── title.csv  
+ └── salary.csv  
 
-.env   
-app.py
-main.py
-prompts.py
+.env  
+app.py  
+main.py  
+prompts.py  
 
-build_database.py
-database.db
+build_database.py  
+database.db  
 
-requirements.txt
-README.md
-
-## Installation & Setup
-
-### 1) Install Dependencies
-
-pip install pandas
-
+requirements.txt  
+README.md  
 
 ---
 
-### 2) Run Database Builder Script
+## Installation & Setup
+
+1) Install dependencies
+
+pip install pandas
+
+2) Run the database build script
 
 python build_database.py
 
-
-A fresh SQLite database is generated:
+A clean database is generated:
 
 database.db
 
-Existing database is:
-
-✔ deleted  
-✔ rebuilt  
-✔ reloaded with fresh data  
-
-to maintain clean and reproducible state.
+Existing database is automatically deleted and rebuilt to ensure consistency and reproducibility.
 
 ---
 
 ## Key Highlights
 
-✔ Structured relational dataset  
-✔ Completely automated DB creation  
-✔ Overwrite-safe rebuild mechanism  
-✔ Suitable for projects & portfolios  
-✔ Supports LLM + Streamlit insights app  
+✔ Designed for database-centric learning and insights  
+✔ Clean relational dataset for analytics projects  
+✔ Automatic rebuild mechanism  
+✔ Suitable for LLM + Streamlit-based systems  
+✔ Lightweight runtime storage backend  
 
 ---
 
-**Gaurav Chauhan**
+Gaurav Chauhan

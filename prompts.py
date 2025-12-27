@@ -1,5 +1,6 @@
 from langchain.prompts import PromptTemplate
 
+#put schema and few shots here
 SCHEMA = """
 Tables and columns in MySQL database `employee`:
 
