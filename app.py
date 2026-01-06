@@ -112,6 +112,7 @@ if user_input:
                 </div>
                 """, unsafe_allow_html=True)
 
+
 with st.sidebar:
     st.markdown("""
     <div style="background-color: #e3f2fd; padding: 15px; border-radius: 10px; margin-top: 20px;">
@@ -139,6 +140,21 @@ with st.sidebar:
         </div>
         """, unsafe_allow_html=True)
     st.markdown("---")
+
+    st.markdown("""
+<div style="background-color:#f5f5f5; padding:12px; border-radius:10px;">
+    <h4 style="margin-top:0;">💡 Example Queries</h4>
+    <ul style="line-height:1.6;">
+        <li>show the departments distribution</li>
+        <li>give names of male employees</li>
+        <li>list employees working in Finance department</li>
+        <li>show salary distribution in a bar chart</li>
+        <li>how many employees are there</li>
+        <li>show number of male and female employees</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
+
 
     st.link_button(
         "View Code on GitHub",
